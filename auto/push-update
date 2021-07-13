@@ -7,5 +7,5 @@ for i in $(seq 1 100); do
   git add .
   git commit -m "update readme to version $i"
   git push
-  sleep 5
+  sleep 10
 done
