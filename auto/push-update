@@ -1,0 +1,11 @@
+#! /usr/bin/env bash
+
+set -xeuo pipefail
+
+for i in $(seq 1 100); do
+  echo "Version: $i" > README.md
+  git add .
+  git commit -m "update readme to version $i"
+  git push
+  sleep 5
+done
