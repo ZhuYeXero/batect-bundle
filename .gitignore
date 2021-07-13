@@ -1,0 +1,15 @@
+.vs/
+.idea/
+*.user
+*.iml
+.vscode/
+.DS_Store
+
+**/.batect/caches/*
+
+batect.local.yml
+
+#cache maven deps when building teamcity pipeline locally
+.teamcity/.maven-cache/*
+!.teamcity/.maven-cache/.gitkeep
+.teamcity/target

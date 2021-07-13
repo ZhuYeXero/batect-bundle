@@ -1,0 +1,33 @@
+project_name: batect-bundle
+
+config_variables:
+  component_name:
+    default: "batect-bundle"
+  component_name_spaced:
+    default: "Batect Bundle"
+
+include:
+  - batect-bundle.yml
+
+## Following lines are used for replacement test, DO NOT delete it
+  # - type: git
+  #   repo: git@github.com:ZhuYeXero/batect-bundle.git
+  #   ref: 1234567890123456789012345678901234567890
+
+  # - type: git
+  #   repo: git@github.com:ZhuYeXero/batect-null.git
+  #   ref: 1234567890123456789012345678901234567890
+
+containers:
+  test1-env:
+    image: dockerhub.com/batect-test1:1234567890123456789012345678901234567890
+  test2-env:
+    image: dockerhub.com/test-test2:1234567890123456789012345678901234567890
+
+tasks:
+  lint:
+    description: Run linting for everything
+    group: Linting tasks
+    prerequisites:
+      - lint:docker
+      - lint:shell
